@@ -138,70 +138,7 @@ Lähetetty siveltimensavel.fi tarjouslomakkeelta
             </CardContent>
           </Card>
 
-          <div className="space-y-6">
-            <Card className="bg-paint-blue text-white shadow-card">
-              <CardContent className="p-8">
-                <div className="text-center space-y-4">
-                  <Phone className="w-12 h-12 mx-auto" />
-                  <h3 className="text-2xl font-bold">Kiireellinen tilanne?</h3>
-                  <p className="text-blue-100">
-                    Soita suoraan ja saat vastauksen heti!
-                  </p>
-                  <Button size="lg" variant="outline" onClick={() => {
-                  if (window.innerWidth <= 768) {
-                    window.location.href = "tel:+358449890048";
-                  } else {
-                    window.open("tel:+358449890048");
-                  }
-                }} className="w-full border-white hover:bg-white hover:text-paint-blue text-lg py-4 text-slate-800">
-                    <Phone className="w-5 h-5 mr-2" />
-                    044 989 0048
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-green-50 border border-green-200 shadow-card">
-              <CardContent className="p-8">
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
-                    <p className="text-green-800 font-semibold">Ilmainen kotikäynti ja tarjous</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
-                    <p className="text-green-800 font-semibold">Kiinteä hinta - ei yllätyksiä</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
-                    <p className="text-green-800 font-semibold">Vastaus 24 tunnin sisällä</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
-                    <p className="text-green-800 font-semibold">Yli 15 vuoden kokemus</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <div className="bg-paint-blue/10 border border-paint-blue/20 rounded-lg p-6">
-              <h4 className="font-bold text-paint-blue mb-3">⚡ Nopea vastaus tärkeää?</h4>
-              <p className="text-sm text-muted-foreground mb-4">
-                Jos haluat varmasti nopeimman vastauksen, <strong>soita suoraan</strong>. 
-                Vastaamme puhelimeen henkilökohtaisesti ma-pe 8-17.
-              </p>
-              <div className="space-y-2 text-sm">
-                <div className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 text-paint-blue" />
-                  <span>asiakaspalvelu@siveltimensavel.fi</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-paint-blue" />
-                  <span>044 989 0048</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
     </section>;
