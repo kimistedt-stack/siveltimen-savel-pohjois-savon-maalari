@@ -7,12 +7,12 @@ const Contact = () => {
     <section id="yhteystiedot" className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Ota yhteyttä
+          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            Aloitetaan <span className="text-paint-blue">yhdessä</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Pyydä ilmainen tarjous tai kysy lisää palveluistamme. 
-            Vastaamme nopeasti ja ammattitaidolla.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Meille tärkeintä on asiakkaan tyytyväisyys ja sovituista aikatauluista kiinni pitäminen. 
+            Ota rohkeasti yhteyttä – kerrotaan lisää siitä, miten voimme auttaa taloasi pysymään terveenä.
           </p>
         </div>
 
@@ -23,47 +23,54 @@ const Contact = () => {
                 <CardTitle className="text-2xl text-foreground">Yhteystiedot</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
+                <div className="mb-6">
+                  <p className="text-muted-foreground leading-relaxed">
+                    <strong className="text-paint-blue">Siveltimen Sävel</strong> palvelee niin yksityisasiakkaita kuin 
+                    taloyhtiöitäkin Pohjois-Savon alueella. Toimimme intohimolla, tarkkuudella ja asiakkaan tarpeita kuunnellen.
+                  </p>
+                </div>
+                
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 bg-paint-blue/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-6 h-6 text-paint-blue" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">Puhelin</h3>
-                    <p className="text-muted-foreground">+358 40 123 4567</p>
-                    <p className="text-sm text-muted-foreground">Arkisin 8-17, viikonloppuisin sopimuksen mukaan</p>
+                    <p className="text-muted-foreground font-medium">+358 40 123 4567</p>
+                    <p className="text-sm text-muted-foreground">Vastaamme henkilökohtaisesti ma-pe 8-17</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 bg-paint-blue/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-6 h-6 text-paint-blue" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">Sähköposti</h3>
-                    <p className="text-muted-foreground">info@siveltimensavel.fi</p>
-                    <p className="text-sm text-muted-foreground">Vastaamme 24h sisällä</p>
+                    <p className="text-muted-foreground font-medium">info@siveltimensavel.fi</p>
+                    <p className="text-sm text-muted-foreground">Vastaamme sähköposteihin saman päivän aikana</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 bg-paint-blue/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-paint-blue" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">Toiminta-alue</h3>
-                    <p className="text-muted-foreground">Pohjois-Savo</p>
-                    <p className="text-sm text-muted-foreground">Kuopio, Siilinjärvi, Lapinlahti ja lähikunnat</p>
+                    <p className="text-muted-foreground font-medium">Koko Pohjois-Savo</p>
+                    <p className="text-sm text-muted-foreground">Kuopio, Siilinjärvi, Lapinlahti, Iisalmi ja lähikunnat</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 bg-paint-blue/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Clock className="w-6 h-6 text-paint-blue" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">Työajat</h3>
-                    <p className="text-muted-foreground">Ma-Pe 8:00-17:00</p>
-                    <p className="text-sm text-muted-foreground">Kiireellisissä tapauksissa myös iltaisin</p>
+                    <p className="text-muted-foreground font-medium">Maanantai-Perjantai 8:00-17:00</p>
+                    <p className="text-sm text-muted-foreground">Kiireellisissä tilanteissa myös iltaisin ja viikonloppuisin</p>
                   </div>
                 </div>
               </CardContent>
@@ -75,42 +82,56 @@ const Contact = () => {
               <CardHeader>
                 <CardTitle className="text-2xl text-foreground">Pyydä tarjous</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground mb-6">
-                  Kerro meille projektin tiedot, niin teemme sinulle ilmaisen tarjouksen nopeasti.
+              <CardContent className="space-y-6">
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  <strong className="text-paint-blue">Annamme kiinteähintaisen tarjouksen</strong> ehdotetuista toimenpiteistä 
+                  käyntimme yhteydessä. Ei piilokustannuksia, ei yllätyksiä – vain rehellinen arvio työstä ja sen hinnasta.
                 </p>
                 
                 <div className="space-y-4">
                   <Button 
                     size="lg" 
-                    className="w-full bg-gradient-hero hover:opacity-90 transition-opacity shadow-soft"
+                    className="w-full bg-paint-blue hover:bg-paint-blue/90 text-white text-lg px-8 py-4 shadow-soft"
                   >
                     <Phone className="w-5 h-5 mr-2" />
-                    Soita suoraan: +358 40 123 4567
+                    Soita nyt: +358 40 123 4567
                   </Button>
                   
                   <Button 
                     variant="outline" 
                     size="lg" 
-                    className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                    className="w-full border-paint-blue text-paint-blue hover:bg-paint-blue hover:text-white text-lg px-8 py-4"
                   >
                     <Mail className="w-5 h-5 mr-2" />
-                    Lähetä sähköpostia
+                    Lähetä viesti sähköpostilla
                   </Button>
+                </div>
+                
+                <div className="mt-6 p-4 bg-paint-blue/5 rounded-lg border border-paint-blue/20">
+                  <p className="text-sm text-muted-foreground text-center">
+                    <strong className="text-paint-blue">Miksi odottaa?</strong> Maali alkaa kulua ja haalistua noin 10–15 vuodessa. 
+                    Ajoissa tehty huoltomaalaus säästää suuremmilta remonttikustannuksilta.
+                  </p>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="bg-accent/10 border-accent/20 shadow-card">
-              <CardContent className="p-6">
-                <div className="text-center">
-                  <h3 className="text-xl font-bold text-foreground mb-2">
-                    Ilmainen tarjous 24h sisällä!
+            <Card className="bg-paint-accent/10 border border-paint-accent/20 shadow-card">
+              <CardContent className="p-8">
+                <div className="text-center space-y-4">
+                  <h3 className="text-2xl font-bold text-foreground">
+                    Yli 15 vuoden kokemus 💪
                   </h3>
-                  <p className="text-muted-foreground">
-                    Kaikki tarjoukset tehdään paikan päällä arvioinnin perusteella. 
-                    Ei ylimääräisiä kuluja tai yllätyksiä.
+                  <p className="text-muted-foreground leading-relaxed">
+                    <strong className="text-paint-blue">Meillä jokainen maalausprojekti on yhtä tärkeä</strong>, 
+                    oli kyseessä sitten pieni mökki tai iso omakotitalo. Käytämme vain testattuja ja säänkestäviä maaleja 
+                    sekä huolellisia työmenetelmiä.
                   </p>
+                  <div className="mt-4 p-3 bg-paint-blue/10 rounded-lg">
+                    <p className="text-paint-blue font-semibold italic">
+                      "Sävel on siveltimessä – ja laatu työssämme."
+                    </p>
+                  </div>
                 </div>
               </CardContent>
             </Card>

@@ -1,17 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Mail } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   return (
     <header className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-gradient-hero rounded-lg flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-lg">S</span>
-          </div>
-          <div>
+        <div className="flex items-center space-x-3">
+          <img src={logo} alt="Siveltimen Sävel logo" className="h-12 w-auto" />
+          <div className="hidden sm:block">
             <h1 className="text-xl font-bold text-foreground">Siveltimen Sävel</h1>
-            <p className="text-sm text-muted-foreground">Talojen huoltomaalaus</p>
+            <p className="text-xs text-muted-foreground uppercase tracking-wide">Luomme kodillesi värien sinfonian</p>
           </div>
         </div>
         
