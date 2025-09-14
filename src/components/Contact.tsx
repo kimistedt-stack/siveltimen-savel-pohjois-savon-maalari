@@ -1,10 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-
 const Contact = () => {
-  return (
-    <section id="yhteystiedot" className="py-20 bg-gradient-subtle">
+  return <section id="yhteystiedot" className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
@@ -89,27 +87,20 @@ const Contact = () => {
                 </p>
                 
                 <div className="space-y-4">
-                  <Button 
-                    size="lg" 
-                    className="w-full bg-paint-blue hover:bg-paint-blue/90 text-white text-lg px-8 py-4 shadow-soft"
-                    onClick={() => {
-                      if (window.innerWidth <= 768) {
-                        window.location.href = "tel:+358449890048";
-                      } else {
-                        window.open("tel:+358449890048");
-                      }
-                    }}
-                  >
+                  <Button size="lg" className="w-full bg-paint-blue hover:bg-paint-blue/90 text-white text-lg px-8 py-4 shadow-soft" onClick={() => {
+                  if (window.innerWidth <= 768) {
+                    window.location.href = "tel:+358449890048";
+                  } else {
+                    window.open("tel:+358449890048");
+                  }
+                }}>
                     <Phone className="w-5 h-5 mr-2" />
                     Soita nyt: 044 989 0048
                   </Button>
                   
-                  <Button 
-                    variant="outline" 
-                    size="lg" 
-                    className="w-full border-paint-blue text-paint-blue hover:bg-paint-blue hover:text-white text-lg px-8 py-4"
-                    onClick={() => document.getElementById('tarjous-lomake')?.scrollIntoView({ behavior: 'smooth' })}
-                  >
+                  <Button variant="outline" size="lg" className="w-full border-paint-blue text-paint-blue hover:bg-paint-blue hover:text-white text-lg px-8 py-4" onClick={() => document.getElementById('tarjous-lomake')?.scrollIntoView({
+                  behavior: 'smooth'
+                })}>
                     <Mail className="w-5 h-5 mr-2" />
                     Täytä tarjouslomake
                   </Button>
@@ -124,30 +115,10 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-paint-accent/10 border border-paint-accent/20 shadow-card">
-              <CardContent className="p-8">
-                <div className="text-center space-y-4">
-                  <h3 className="text-2xl font-bold text-foreground">
-                    Yli 15 vuoden kokemus 💪
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    <strong className="text-paint-blue">Meillä jokainen maalausprojekti on yhtä tärkeä</strong>, 
-                    oli kyseessä sitten pieni mökki tai iso omakotitalo. Käytämme vain testattuja ja säänkestäviä maaleja 
-                    sekä huolellisia työmenetelmiä.
-                  </p>
-                  <div className="mt-4 p-3 bg-paint-blue/10 rounded-lg">
-                    <p className="text-paint-blue font-semibold italic">
-                      "Sävel on siveltimessä – ja laatu työssämme."
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;

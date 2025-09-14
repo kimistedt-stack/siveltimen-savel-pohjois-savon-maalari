@@ -1,9 +1,7 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import logo from "@/assets/logo.png";
-
 const Footer = () => {
-  return (
-    <footer className="bg-paint-blue text-white py-12">
+  return <footer className="bg-paint-blue text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
@@ -18,10 +16,7 @@ const Footer = () => {
               Luotettava kumppani talon huoltomaalauksessa 
               Pohjois-Savon alueella.
             </p>
-            <p className="text-blue-200 text-sm">
-              Yli 15 vuoden kokemuksella palvelemme niin yksityisasiakkaita 
-              kuin taloyhtiöitäkin ammattitaidolla ja aikataulussa.
-            </p>
+            <p className="text-blue-200 text-sm">Palvelemme niin yksityisasiakkaita kuin taloyhtiöitäkin ammattitaidolla ja aikataulussa.</p>
           </div>
           
           <div>
@@ -69,8 +64,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
