@@ -1,48 +1,71 @@
+import { Phone, Mail, MapPin } from "lucide-react";
+import logo from "@/assets/logo.png";
+
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground py-12">
+    <footer className="bg-paint-blue text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-primary-foreground/20 rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">S</span>
-              </div>
+            <div className="flex items-center space-x-3 mb-4">
+              <img src={logo} alt="Siveltimen Sävel logo" className="h-12 w-auto" />
               <div>
                 <h3 className="text-xl font-bold">Siveltimen Sävel</h3>
-                <p className="text-sm opacity-80">Talojen huoltomaalaus</p>
+                <p className="text-sm text-blue-200">Luomme kodillesi värien sinfonian</p>
               </div>
             </div>
-            <p className="text-primary-foreground/80 leading-relaxed">
-              Ammattitaitoista ja laadukasta huoltomaalausta Pohjois-Savon alueella. 
-              Yli 15 vuoden kokemus talojen ulkomaalauksesta.
+            <p className="text-blue-100 mb-4">
+              Luotettava kumppani talon huoltomaalauksessa 
+              Pohjois-Savon alueella.
+            </p>
+            <p className="text-blue-200 text-sm">
+              Yli 15 vuoden kokemuksella palvelemme niin yksityisasiakkaita 
+              kuin taloyhtiöitäkin ammattitaidolla ja aikataulussa.
             </p>
           </div>
-
+          
           <div>
-            <h4 className="text-lg font-semibold mb-4">Palvelut</h4>
-            <ul className="space-y-2 text-primary-foreground/80">
-              <li>Talojen ulkomaalaus</li>
-              <li>Huoltomaalaus</li>
-              <li>Pintojen suojaus</li>
-              <li>Viimeistely ja siistiminen</li>
+            <h4 className="text-lg font-semibold mb-4">Palvelumme</h4>
+            <ul className="space-y-2 text-blue-100">
+              <li>• Huoltomaalaukset</li>
+              <li>• Ulkomaalaukset</li>
+              <li>• Pintakäsittelyt ja korjaukset</li>
+              <li>• Kosteusvaurioiden ehkäisy</li>
+              <li>• Ilmaiset katsastukset</li>
             </ul>
           </div>
-
+          
           <div>
             <h4 className="text-lg font-semibold mb-4">Yhteystiedot</h4>
-            <div className="space-y-2 text-primary-foreground/80">
-              <p>Puhelin: +358 40 123 4567</p>
-              <p>Sähköposti: info@siveltimensavel.fi</p>
-              <p>Toiminta-alue: Pohjois-Savo</p>
-              <p>Työajat: Ma-Pe 8:00-17:00</p>
+            <div className="space-y-3 text-blue-100">
+              <div className="flex items-center space-x-3">
+                <Phone className="w-5 h-5" />
+                <span>044 989 0048</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Mail className="w-5 h-5" />
+                <span>asiakaspalvelu@siveltimensavel.fi</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <MapPin className="w-5 h-5" />
+                <span>Koko Pohjois-Savo</span>
+              </div>
+            </div>
+            <div className="mt-4 p-3 bg-white/10 rounded-lg">
+              <p className="text-sm text-blue-100">
+                <strong>Vastaamme ma-pe 8-17</strong><br />
+                Kiireellisissä tapauksissa myös iltaisin
+              </p>
             </div>
           </div>
         </div>
-
-        <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
-          <p className="text-primary-foreground/60">
-            © 2024 Siveltimen Sävel. Kaikki oikeudet pidätetään.
+        
+        <hr className="border-blue-300/30 my-8" />
+        
+        <div className="text-center text-blue-200">
+          <p>&copy; 2024 Siveltimen Sävel. Kaikki oikeudet pidätetään.</p>
+          <p className="text-sm mt-2 italic">
+            "Jotta talosi pysyisi terveenä - ota yhteyttä tänään"
           </p>
         </div>
       </div>

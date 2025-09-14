@@ -7,13 +7,13 @@ const BeforeAfter = () => {
   return (
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" id="info">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Näe <span className="text-paint-blue">muutos</span> omin silmin
+            Näe <span className="text-paint-blue">muutos</span> itse
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Huoltomaalaus ei ole vain pintaa – se on osa kodin suojaa ja kauneutta. 
-            Katso miten muutamme vanhan, rapeutuneen pinnan uudeksi ja suojaavaksi.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <strong className="text-paint-blue">Huoltomaalaus pelastaa talosi</strong> homeelta ja kosteusvaurioilta. 
+            Katso miten ammattityö muuttaa talon ulkonäön ja suojaa terveyttäsi.
           </p>
         </div>
 

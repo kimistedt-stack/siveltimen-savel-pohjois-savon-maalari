@@ -36,7 +36,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">Puhelin</h3>
-                    <p className="text-muted-foreground font-medium">+358 40 123 4567</p>
+                    <p className="text-muted-foreground font-medium">044 989 0048</p>
                     <p className="text-sm text-muted-foreground">Vastaamme henkilökohtaisesti ma-pe 8-17</p>
                   </div>
                 </div>
@@ -47,7 +47,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">Sähköposti</h3>
-                    <p className="text-muted-foreground font-medium">info@siveltimensavel.fi</p>
+                    <p className="text-muted-foreground font-medium">asiakaspalvelu@siveltimensavel.fi</p>
                     <p className="text-sm text-muted-foreground">Vastaamme sähköposteihin saman päivän aikana</p>
                   </div>
                 </div>
@@ -92,18 +92,26 @@ const Contact = () => {
                   <Button 
                     size="lg" 
                     className="w-full bg-paint-blue hover:bg-paint-blue/90 text-white text-lg px-8 py-4 shadow-soft"
+                    onClick={() => {
+                      if (window.innerWidth <= 768) {
+                        window.location.href = "tel:+358449890048";
+                      } else {
+                        window.open("tel:+358449890048");
+                      }
+                    }}
                   >
                     <Phone className="w-5 h-5 mr-2" />
-                    Soita nyt: +358 40 123 4567
+                    Soita nyt: 044 989 0048
                   </Button>
                   
                   <Button 
                     variant="outline" 
                     size="lg" 
                     className="w-full border-paint-blue text-paint-blue hover:bg-paint-blue hover:text-white text-lg px-8 py-4"
+                    onClick={() => document.getElementById('tarjous-lomake')?.scrollIntoView({ behavior: 'smooth' })}
                   >
                     <Mail className="w-5 h-5 mr-2" />
-                    Lähetä viesti sähköpostilla
+                    Täytä tarjouslomake
                   </Button>
                 </div>
                 
