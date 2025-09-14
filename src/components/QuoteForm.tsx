@@ -6,7 +6,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, Mail, Send, CheckCircle } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
-
 const QuoteForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -16,12 +15,12 @@ const QuoteForm = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     try {
       // Create mailto link with form data
       const subject = `Tarjouspyyntö - ${formData.name}`;
@@ -37,15 +36,13 @@ ${formData.message}
 ---
 Lähetetty siveltimensavel.fi tarjouslomakkeelta
       `;
-      
       const mailtoUrl = `mailto:asiakaspalvelu@siveltimensavel.fi?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       window.location.href = mailtoUrl;
-      
       toast({
         title: "Tarjouspyyntö lähetetty!",
-        description: "Otamme sinuun yhteyttä 24 tunnin sisällä.",
+        description: "Otamme sinuun yhteyttä 24 tunnin sisällä."
       });
-      
+
       // Reset form
       setFormData({
         name: "",
@@ -54,28 +51,27 @@ Lähetetty siveltimensavel.fi tarjouslomakkeelta
         address: "",
         message: ""
       });
-      
     } catch (error) {
       toast({
         title: "Virhe",
         description: "Jotain meni pieleen. Yritä uudelleen tai soita suoraan.",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
       setIsSubmitting(false);
     }
   };
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
+    const {
+      name,
+      value
+    } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
-
-  return (
-    <section id="tarjous-lomake" className="py-20 bg-gradient-subtle">
+  return <section id="tarjous-lomake" className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
@@ -101,92 +97,42 @@ Lähetetty siveltimensavel.fi tarjouslomakkeelta
                   <Label htmlFor="name" className="text-sm font-semibold text-foreground">
                     Nimi *
                   </Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="mt-2 border-paint-blue/20 focus:border-paint-blue"
-                    placeholder="Etunimi Sukunimi"
-                  />
+                  <Input id="name" name="name" value={formData.name} onChange={handleInputChange} required className="mt-2 border-paint-blue/20 focus:border-paint-blue" placeholder="Etunimi Sukunimi" />
                 </div>
 
                 <div>
                   <Label htmlFor="phone" className="text-sm font-semibold text-foreground">
                     Puhelinnumero *
                   </Label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    required
-                    className="mt-2 border-paint-blue/20 focus:border-paint-blue"
-                    placeholder="044 123 4567"
-                  />
+                  <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleInputChange} required className="mt-2 border-paint-blue/20 focus:border-paint-blue" placeholder="044 123 4567" />
                 </div>
 
                 <div>
                   <Label htmlFor="email" className="text-sm font-semibold text-foreground">
                     Sähköposti
                   </Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="mt-2 border-paint-blue/20 focus:border-paint-blue"
-                    placeholder="etunimi@esimerkki.fi"
-                  />
+                  <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} className="mt-2 border-paint-blue/20 focus:border-paint-blue" placeholder="etunimi@esimerkki.fi" />
                 </div>
 
                 <div>
                   <Label htmlFor="address" className="text-sm font-semibold text-foreground">
                     Osoite *
                   </Label>
-                  <Input
-                    id="address"
-                    name="address"
-                    value={formData.address}
-                    onChange={handleInputChange}
-                    required
-                    className="mt-2 border-paint-blue/20 focus:border-paint-blue"
-                    placeholder="Katuosoite, Postinumero Kaupunki"
-                  />
+                  <Input id="address" name="address" value={formData.address} onChange={handleInputChange} required className="mt-2 border-paint-blue/20 focus:border-paint-blue" placeholder="Katuosoite, Postinumero Kaupunki" />
                 </div>
 
                 <div>
                   <Label htmlFor="message" className="text-sm font-semibold text-foreground">
                     Kerro tarkemmin tarpeestasi
                   </Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    rows={4}
-                    className="mt-2 border-paint-blue/20 focus:border-paint-blue resize-none"
-                    placeholder="Esim. kuinka vanha talo, milloin viimeksi maalattu, erityisiä tarpeita..."
-                  />
+                  <Textarea id="message" name="message" value={formData.message} onChange={handleInputChange} rows={4} className="mt-2 border-paint-blue/20 focus:border-paint-blue resize-none" placeholder="Esim. kuinka vanha talo, milloin viimeksi maalattu, erityisiä tarpeita..." />
                 </div>
 
-                <Button
-                  type="submit"
-                  size="lg"
-                  disabled={isSubmitting}
-                  className="w-full bg-paint-blue hover:bg-paint-blue/90 text-white text-lg py-4"
-                >
-                  {isSubmitting ? (
-                    "Lähetetään..."
-                  ) : (
-                    <>
+                <Button type="submit" size="lg" disabled={isSubmitting} className="w-full bg-paint-blue hover:bg-paint-blue/90 text-white text-lg py-4">
+                  {isSubmitting ? "Lähetetään..." : <>
                       <Send className="w-5 h-5 mr-2" />
                       Lähetä tarjouspyyntö
-                    </>
-                  )}
+                    </>}
                 </Button>
               </form>
             </CardContent>
@@ -201,18 +147,13 @@ Lähetetty siveltimensavel.fi tarjouslomakkeelta
                   <p className="text-blue-100">
                     Soita suoraan ja saat vastauksen heti!
                   </p>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="w-full border-white text-white hover:bg-white hover:text-paint-blue text-lg py-4"
-                    onClick={() => {
-                      if (window.innerWidth <= 768) {
-                        window.location.href = "tel:+358449890048";
-                      } else {
-                        window.open("tel:+358449890048");
-                      }
-                    }}
-                  >
+                  <Button size="lg" variant="outline" onClick={() => {
+                  if (window.innerWidth <= 768) {
+                    window.location.href = "tel:+358449890048";
+                  } else {
+                    window.open("tel:+358449890048");
+                  }
+                }} className="w-full border-white hover:bg-white hover:text-paint-blue text-lg py-4 text-slate-800">
                     <Phone className="w-5 h-5 mr-2" />
                     044 989 0048
                   </Button>
@@ -263,8 +204,6 @@ Lähetetty siveltimensavel.fi tarjouslomakkeelta
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default QuoteForm;
