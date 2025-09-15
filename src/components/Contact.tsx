@@ -77,34 +77,11 @@ const Contact = () => {
 
           <div className="space-y-6">
             <Card className="shadow-card border-border/50">
-              <CardHeader>
-                <CardTitle className="text-2xl text-foreground">Pyydä tarjous</CardTitle>
-              </CardHeader>
+              
               <CardContent className="space-y-6">
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  <strong className="text-paint-blue">Annamme kiinteähintaisen tarjouksen</strong> ehdotetuista toimenpiteistä 
-                  käyntimme yhteydessä. Ei piilokustannuksia, ei yllätyksiä – vain rehellinen arvio työstä ja sen hinnasta.
-                </p>
                 
-                <div className="space-y-4">
-                  <Button size="lg" className="w-full bg-paint-blue hover:bg-paint-blue/90 text-white text-lg px-8 py-4 shadow-soft" onClick={() => {
-                  if (window.innerWidth <= 768) {
-                    window.location.href = "tel:+358449890048";
-                  } else {
-                    window.open("tel:+358449890048");
-                  }
-                }}>
-                    <Phone className="w-5 h-5 mr-2" />
-                    Soita nyt: 044 989 0048
-                  </Button>
-                  
-                  <Button variant="outline" size="lg" className="w-full border-paint-blue text-paint-blue hover:bg-paint-blue hover:text-white text-lg px-8 py-4" onClick={() => document.getElementById('tarjous-lomake')?.scrollIntoView({
-                  behavior: 'smooth'
-                })}>
-                    <Mail className="w-5 h-5 mr-2" />
-                    Täytä tarjouslomake
-                  </Button>
-                </div>
+                
+                
                 
                 <div className="mt-6 p-4 bg-paint-blue/5 rounded-lg border border-paint-blue/20">
                   <p className="text-sm text-muted-foreground text-center">

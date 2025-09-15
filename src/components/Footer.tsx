@@ -26,7 +26,8 @@ const Footer = () => {
               <li>• Ulkomaalaukset</li>
               <li>• Pintakäsittelyt ja korjaukset</li>
               <li>• Kosteusvaurioiden ehkäisy</li>
-              <li>• Ilmaiset katsastukset</li>
+              <li>
+            </li>
             </ul>
           </div>
           
