@@ -46,7 +46,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-foreground">Sähköposti</h3>
                     <p className="text-muted-foreground font-medium">asiakaspalvelu@siveltimensavel.fi</p>
-                    <p className="text-sm text-muted-foreground">Vastaamme sähköposteihin saman päivän aikana</p>
+                    <p className="text-sm text-muted-foreground">Vastaamme sähköposteihin 24h sisällä</p>
                   </div>
                 </div>
 
