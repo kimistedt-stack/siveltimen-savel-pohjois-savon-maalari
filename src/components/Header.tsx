@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logoFull from "@/assets/logo-full.png";
 const Header = () => {
   const handleCallClick = () => {
     if (window.innerWidth <= 768) {
@@ -17,33 +17,32 @@ const Header = () => {
     });
   };
   return <header className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center space-x-4">
-          <img src={logo} alt="Siveltimen Sävel logo" className="h-16 w-auto" />
-          
+      <div className="container mx-auto px-6 py-3 flex items-center justify-between">
+        <div className="flex items-center space-x-3">
+          <img src={logoFull} alt="Siveltimen Sävel logo" className="h-20 w-auto" />
         </div>
         
-        <nav className="hidden md:flex items-center space-x-6">
-          <a href="#etusivu" className="text-foreground hover:text-paint-blue transition-colors">
+        <nav className="hidden md:flex items-center space-x-8">
+          <a href="#etusivu" className="text-foreground hover:text-primary transition-colors font-medium px-3 py-2 rounded-md hover:bg-primary/10">
             Etusivu
           </a>
-          <a href="#palvelut" className="text-foreground hover:text-paint-blue transition-colors">
+          <a href="#palvelut" className="text-foreground hover:text-primary transition-colors font-medium px-3 py-2 rounded-md hover:bg-primary/10">
             Palvelut
           </a>
-          <a href="#info" className="text-foreground hover:text-paint-blue transition-colors">
+          <a href="#info" className="text-foreground hover:text-primary transition-colors font-medium px-3 py-2 rounded-md hover:bg-primary/10">
             Info
           </a>
-          <a href="#yhteystiedot" className="text-foreground hover:text-paint-blue transition-colors">
+          <a href="#yhteystiedot" className="text-foreground hover:text-primary transition-colors font-medium px-3 py-2 rounded-md hover:bg-primary/10">
             Yhteystiedot
           </a>
         </nav>
 
-        <div className="flex items-center space-x-2">
-          <Button variant="outline" size="sm" className="hidden sm:flex items-center space-x-1 border-paint-blue text-paint-blue hover:bg-paint-blue hover:text-white" onClick={handleCallClick}>
+        <div className="flex items-center space-x-3">
+          <Button variant="outline" size="sm" className="hidden sm:flex items-center space-x-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium" onClick={handleCallClick}>
             <Phone className="w-4 h-4" />
             <span>Soita nyt</span>
           </Button>
-          <Button size="sm" className="bg-paint-blue hover:bg-paint-blue/90 text-white" onClick={handleQuoteClick}>
+          <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-6" onClick={handleQuoteClick}>
             Pyydä tarjous
           </Button>
         </div>

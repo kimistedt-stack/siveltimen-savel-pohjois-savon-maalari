@@ -1,20 +1,47 @@
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, ChevronDown } from "lucide-react";
+import { Phone, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 import heroHouse from "@/assets/hero-house.jpg";
+import heroVideo from "@/assets/hero-video.mp4";
 const FullScreenHero = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [showVideo, setShowVideo] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowVideo(prev => !prev);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
   return <section className="relative h-screen overflow-hidden">
-      {/* Background Image with Parallax */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-      backgroundImage: `url(${heroHouse})`,
-      transform: `translateY(${scrollY * 0.5}px)`
-    }} />
+      {/* Background Media with Parallax */}
+      <div className="absolute inset-0">
+        {showVideo ? (
+          <video 
+            className="w-full h-full object-cover"
+            autoPlay 
+            muted 
+            loop
+            style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+          >
+            <source src={heroVideo} type="video/mp4" />
+          </video>
+        ) : (
+          <div 
+            className="w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url(${heroHouse})`,
+              transform: `translateY(${scrollY * 0.5}px)`
+            }} 
+          />
+        )}
+      </div>
       
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70" />
@@ -30,7 +57,7 @@ const FullScreenHero = () => {
           <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight">
             Jotta talosi
             <br />
-            <span className="text-paint-blue-light">pysyisi terveenä</span>
+            <span className="text-paint-orange">pysyisi terveenä</span>
           </h1>
           
           <p className="text-xl lg:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed">
@@ -38,24 +65,12 @@ const FullScreenHero = () => {
             kestävällä huoltomaalauksella Pohjois-Savossa
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
-            <Button size="lg" className="bg-paint-blue hover:bg-paint-blue/90 text-white text-lg px-8 py-4" onClick={() => document.getElementById('tarjous-lomake')?.scrollIntoView({
+          <div className="flex justify-center pt-8">
+            <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-4 font-semibold" onClick={() => document.getElementById('tarjous-lomake')?.scrollIntoView({
             behavior: 'smooth'
           })}>
               <Phone className="w-5 h-5 mr-2" />
-              Pyydä ilmainen tarjous
-            </Button>
-            <Button variant="outline" size="lg" onClick={() => {
-            if (window.innerWidth <= 768) {
-              window.location.href = "tel:+358449890048";
-            } else {
-              document.getElementById('yhteystiedot')?.scrollIntoView({
-                behavior: 'smooth'
-              });
-            }
-          }} className="border-white hover:bg-white hover:text-paint-blue text-lg px-8 py-4 text-slate-800">
-              <Phone className="w-5 h-5 mr-2" />
-              Ota heti yhteyttä
+              Aloitetaan yhdessä
             </Button>
           </div>
         </div>
