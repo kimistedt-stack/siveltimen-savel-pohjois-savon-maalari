@@ -1,7 +1,18 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import logoFull from "@/assets/logo-full.png";
 const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const handleCallClick = () => {
     if (window.innerWidth <= 768) {
       window.location.href = "tel:+358449890048";
@@ -16,10 +27,12 @@ const Header = () => {
       behavior: 'smooth'
     });
   };
-  return <header className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
+  return <header className={`sticky top-0 z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-background/80 backdrop-blur-md border-b border-border/50' : 'bg-background/95 backdrop-blur-sm border-b border-border'
+    }`}>
       <div className="container mx-auto px-6 py-3 flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          <img src={logoFull} alt="Siveltimen Sävel logo" className="h-20 w-auto" />
+          <img src={logoFull} alt="Siveltimen Sävel logo" className="h-24 w-auto" />
         </div>
         
         <nav className="hidden md:flex items-center space-x-8">

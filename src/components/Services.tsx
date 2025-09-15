@@ -4,7 +4,7 @@ import { Brush, Shield, CheckCircle, Clock, AlertTriangle, Phone } from "lucide-
 const Services = () => {
   const workSteps = [{
     icon: <CheckCircle className="w-8 h-8 text-paint-blue" />,
-    title: "1. Ilmainen katsastus",
+    title: "1. Ilmainen kuntokartoitus",
     description: "Tulemme paikan päälle samana tai seuraavana päivänä arvioimaan tilanneen ja annamme kiinteähintaisen tarjouksen."
   }, {
     icon: <Brush className="w-8 h-8 text-paint-blue" />,

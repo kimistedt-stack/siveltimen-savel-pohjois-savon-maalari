@@ -1,12 +1,12 @@
 import { Phone, Mail, MapPin } from "lucide-react";
-import logo from "@/assets/logo.png";
+import paintbrushIcon from "@/assets/paintbrush-footer.png";
 const Footer = () => {
   return <footer className="bg-paint-blue text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <img src={logo} alt="Siveltimen Sävel logo" className="h-12 w-auto" />
+              <img src={paintbrushIcon} alt="Siveltimen Sävel sivellin" className="h-16 w-auto" />
               <div>
                 <h3 className="text-xl font-bold">Siveltimen Sävel</h3>
                 <p className="text-sm text-blue-200">Luomme kodillesi värien sinfonian</p>
