@@ -4,14 +4,31 @@ import { Phone } from "lucide-react";
 import logoFull from "@/assets/logo-full.png";
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
+      const currentScrollY = window.scrollY;
+      
+      // Set scrolled state for styling
+      setIsScrolled(currentScrollY > 100);
+      
+      // Handle visibility based on scroll direction
+      if (currentScrollY < lastScrollY || currentScrollY < 50) {
+        // Scrolling up or near top - show header
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down and past threshold - hide header
+        setIsVisible(false);
+      }
+      
+      setLastScrollY(currentScrollY);
     };
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const handleCallClick = () => {
     if (window.innerWidth <= 768) {
@@ -27,12 +44,14 @@ const Header = () => {
       behavior: 'smooth'
     });
   };
-  return <header className={`sticky top-0 z-50 transition-all duration-300 ${
+  return <header className={`sticky top-0 z-50 transition-all duration-500 ${
+      isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
+    } ${
       isScrolled ? 'bg-background/80 backdrop-blur-md border-b border-border/50' : 'bg-background/95 backdrop-blur-sm border-b border-border'
     }`}>
       <div className="container mx-auto px-6 py-0 flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          <img src={logoFull} alt="Siveltimen Sävel logo" className="h-32 w-auto" />
+          <img src={logoFull} alt="Siveltimen Sävel logo" className="h-20 w-auto" />
         </div>
         
         <nav className="hidden md:flex items-center space-x-8">
