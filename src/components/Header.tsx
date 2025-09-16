@@ -30,7 +30,7 @@ const Header = () => {
   return <header className={`sticky top-0 z-50 transition-all duration-300 ${
       isScrolled ? 'bg-background/80 backdrop-blur-md border-b border-border/50' : 'bg-background/95 backdrop-blur-sm border-b border-border'
     }`}>
-      <div className="container mx-auto px-6 py-1 flex items-center justify-between">
+      <div className="container mx-auto px-6 py-0 flex items-center justify-between">
         <div className="flex items-center space-x-3">
           <img src={logoFull} alt="Siveltimen Sävel logo" className="h-32 w-auto" />
         </div>
