@@ -32,7 +32,7 @@ const Header = () => {
     }`}>
       <div className="container mx-auto px-6 py-3 flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          <img src={logoFull} alt="Siveltimen Sävel logo" className="h-24 w-auto" />
+          <img src={logoFull} alt="Siveltimen Sävel logo" className="h-32 w-auto" />
         </div>
         
         <nav className="hidden md:flex items-center space-x-8">
