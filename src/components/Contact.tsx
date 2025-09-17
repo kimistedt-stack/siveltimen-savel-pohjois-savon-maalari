@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 const Contact = () => {
   return <section id="yhteystiedot" className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4">
