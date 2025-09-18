@@ -1,13 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Phone, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useLanguage } from "@/contexts/LanguageContext";
 import heroHouse from "@/assets/hero-house.jpg";
 import heroVideo from "@/assets/hero-video.mp4";
+
 const FullScreenHero = () => {
   const [scrollY, setScrollY] = useState(0);
   const [showVideo, setShowVideo] = useState(false);
-  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -57,11 +56,11 @@ const FullScreenHero = () => {
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
         <div className="max-w-4xl space-y-8">
           <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight">
-            {t('hero.title')}
+            Siveltimen Sävel
           </h1>
           
           <p className="text-xl lg:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed">
-            {t('hero.subtitle')}
+            Ammattitaitoista maalausta Uudellamaalla jo vuodesta 2018. Kotisi ansaitsee parhaan mahdollisen suoja.
           </p>
           
           <div className="flex justify-center pt-8">
@@ -69,7 +68,7 @@ const FullScreenHero = () => {
             behavior: 'smooth'
           })}>
               <Phone className="w-5 h-5 mr-2" />
-              {t('hero.cta')}
+              Pyydä ilmainen tarjous
             </Button>
           </div>
         </div>
