@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, Mail, Send, CheckCircle } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
-
+import { useLanguage } from "@/contexts/LanguageContext";
 const QuoteForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -17,6 +17,7 @@ const QuoteForm = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const { t } = useLanguage();
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -74,10 +75,10 @@ Lähetetty siveltimensavel.fi tarjouslomakkeelta
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Pyydä ilmainen tarjous
+            {t('quote.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Kerro meille projektistasi - vastaamme 24 tunnin sisällä
+            {t('quote.subtitle')}
           </p>
         </div>
 
@@ -85,12 +86,12 @@ Lähetetty siveltimensavel.fi tarjouslomakkeelta
           <div className="space-y-6">
             <Card className="shadow-card border-border/50">
               <CardHeader>
-                <CardTitle className="text-2xl text-foreground">Ota yhteyttä</CardTitle>
+                <CardTitle className="text-2xl text-foreground">{t('contact.title')}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="mb-6">
                   <p className="text-muted-foreground leading-relaxed">
-                    Olemme maalausalan ammattilaisyritys, joka palvelee kotitalouksia ja yrityksiä Uudellamaalla.
+                    {t('footer.description')}
                   </p>
                 </div>
                 
@@ -99,9 +100,9 @@ Lähetetty siveltimensavel.fi tarjouslomakkeelta
                     <Phone className="w-6 h-6 text-paint-blue" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground">Puhelin</h3>
+                    <h3 className="font-semibold text-foreground">{t('contact.phone')}</h3>
                     <p className="text-muted-foreground font-medium">044 989 0048</p>
-                    <p className="text-sm text-muted-foreground">Ma-Pe 8-17, La 9-15</p>
+                    <p className="text-sm text-muted-foreground">{t('contact.hoursValue')}</p>
                   </div>
                 </div>
 
@@ -110,9 +111,9 @@ Lähetetty siveltimensavel.fi tarjouslomakkeelta
                     <Mail className="w-6 h-6 text-paint-blue" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground">Sähköposti</h3>
+                    <h3 className="font-semibold text-foreground">{t('contact.email')}</h3>
                     <p className="text-muted-foreground font-medium">asiakaspalvelu@siveltimensavel.fi</p>
-                    <p className="text-sm text-muted-foreground">Uusimaa, pääkaupunkiseutu</p>
+                    <p className="text-sm text-muted-foreground">{t('contact.areaValue')}</p>
                   </div>
                 </div>
 
@@ -137,46 +138,44 @@ Lähetetty siveltimensavel.fi tarjouslomakkeelta
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <Label htmlFor="name" className="text-sm font-semibold text-foreground">
-                    Nimi *
+                    {t('quote.name')} *
                   </Label>
                   <Input id="name" name="name" value={formData.name} onChange={handleInputChange} required className="mt-2 border-paint-blue/20 focus:border-paint-blue" placeholder="Etunimi Sukunimi" />
                 </div>
 
                 <div>
                   <Label htmlFor="phone" className="text-sm font-semibold text-foreground">
-                    Puhelinnumero *
+                    {t('quote.phone')} *
                   </Label>
                   <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleInputChange} required className="mt-2 border-paint-blue/20 focus:border-paint-blue" placeholder="044 123 4567" />
                 </div>
 
                 <div>
                   <Label htmlFor="email" className="text-sm font-semibold text-foreground">
-                    Sähköposti
+                    {t('quote.email')}
                   </Label>
                   <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} className="mt-2 border-paint-blue/20 focus:border-paint-blue" placeholder="etunimi@esimerkki.fi" />
                 </div>
 
                 <div>
                   <Label htmlFor="address" className="text-sm font-semibold text-foreground">
-                    Osoite *
+                    {t('quote.address')} *
                   </Label>
                   <Input id="address" name="address" value={formData.address} onChange={handleInputChange} required className="mt-2 border-paint-blue/20 focus:border-paint-blue" placeholder="Katuosoite, Postinumero Kaupunki" />
                 </div>
 
                 <div>
                   <Label htmlFor="message" className="text-sm font-semibold text-foreground">
-                    Viesti
+                    {t('quote.message')}
                   </Label>
                   <Textarea id="message" name="message" value={formData.message} onChange={handleInputChange} rows={4} className="mt-2 border-paint-blue/20 focus:border-paint-blue resize-none" placeholder="Esim. kuinka vanha talo, milloin viimeksi maalattu, erityisiä tarpeita..." />
                 </div>
 
                 <Button type="submit" size="lg" disabled={isSubmitting} className="w-full bg-paint-blue hover:bg-paint-blue/90 text-white text-lg py-4">
-                  {isSubmitting ? "Lähetetään..." : (
-                    <>
+                  {isSubmitting ? t('quote.submitting') : <>
                       <Send className="w-5 h-5 mr-2" />
-                      Lähetä tarjouspyyntö
-                    </>
-                  )}
+                      {t('quote.submit')}
+                    </>}
                 </Button>
               </form>
             </CardContent>

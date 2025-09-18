@@ -1,30 +1,27 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Brush, Shield, CheckCircle, Clock, AlertTriangle, Phone } from "lucide-react";
-
+import { useLanguage } from "@/contexts/LanguageContext";
 const Services = () => {
-  const workSteps = [
-    {
-      icon: <CheckCircle className="w-8 h-8 text-paint-blue" />,
-      title: "Konsultaatio ja kartoitus",
-      description: "Tulemme paikalle arvioimaan työn laajuuden ja antamaan tarkan tarjouksen."
-    },
-    {
-      icon: <Brush className="w-8 h-8 text-paint-blue" />,
-      title: "Huolellinen valmistelu",
-      description: "Pintojen pesu, hionta ja pohjustus ammattitaidolla - perusta kestävälle lopputulokselle."
-    },
-    {
-      icon: <Shield className="w-8 h-8 text-paint-blue" />,
-      title: "Laadukas maalaus",
-      description: "Käytämme vain parhaita maaleja ja työkaluja täydellisen lopputuloksen varmistamiseksi."
-    },
-    {
-      icon: <Clock className="w-8 h-8 text-paint-blue" />,
-      title: "Viimeistely ja luovutus",
-      description: "Huolellinen siivous ja tarkastus ennen työn luovutusta asiakkaalle."
-    }
-  ];
+  const { t } = useLanguage();
+  
+  const workSteps = [{
+    icon: <CheckCircle className="w-8 h-8 text-paint-blue" />,
+    title: t('services.consultation'),
+    description: t('services.consultationDesc')
+  }, {
+    icon: <Brush className="w-8 h-8 text-paint-blue" />,
+    title: t('services.preparation'),
+    description: t('services.preparationDesc')
+  }, {
+    icon: <Shield className="w-8 h-8 text-paint-blue" />,
+    title: t('services.painting'),
+    description: t('services.paintingDesc')
+  }, {
+    icon: <Clock className="w-8 h-8 text-paint-blue" />,
+    title: t('services.finishing'),
+    description: t('services.finishingDesc')
+  }];
   return <section id="palvelut" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Urgent Health Warning */}
@@ -32,10 +29,10 @@ const Services = () => {
 
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Näin teemme työt
+            {t('services.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Ammattitaitoinen ja luotettava prosessi jokaisessa projektissa
+            {t('services.subtitle')}
           </p>
         </div>
 
@@ -53,24 +50,24 @@ const Services = () => {
 
         <div className="bg-paint-blue/5 border border-paint-blue/20 rounded-2xl p-12 text-center">
           <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-8">
-            Miksi valita meidät?
+            {t('benefits.title')}
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left max-w-5xl mx-auto">
             <div className="bg-white p-6 rounded-lg shadow-card">
-              <h4 className="font-bold text-paint-blue mb-2 text-lg">✓ Kokemusta vuodesta 2018</h4>
-              <p className="text-muted-foreground">Satoja tyytyväisiä asiakkaita ja onnistuneita projekteja</p>
+              <h4 className="font-bold text-paint-blue mb-2 text-lg">✓ {t('benefits.experience')}</h4>
+              <p className="text-muted-foreground">{t('benefits.experienceDesc')}</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-card">
-              <h4 className="font-bold text-paint-blue mb-2 text-lg">✓ Laadukkaat materiaalit</h4>
-              <p className="text-muted-foreground">Käytämme vain parhaita maaleja ja työkaluja</p>
+              <h4 className="font-bold text-paint-blue mb-2 text-lg">✓ {t('benefits.quality')}</h4>
+              <p className="text-muted-foreground">{t('benefits.qualityDesc')}</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-card">
-              <h4 className="font-bold text-paint-blue mb-2 text-lg">✓ Työlle takuu</h4>
-              <p className="text-muted-foreground">Luotamme työhömme ja tarjoamme kattavan takuun</p>
+              <h4 className="font-bold text-paint-blue mb-2 text-lg">✓ {t('benefits.warranty')}</h4>
+              <p className="text-muted-foreground">{t('benefits.warrantyDesc')}</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-card">
-              <h4 className="font-bold text-paint-blue mb-2 text-lg">✓ Asiakaspalvelua ympäri vuorokauden</h4>
-              <p className="text-muted-foreground">Vastaamme kyselyihin nopeasti ja ammattitaidolla</p>
+              <h4 className="font-bold text-paint-blue mb-2 text-lg">✓ {t('benefits.service')}</h4>
+              <p className="text-muted-foreground">{t('benefits.serviceDesc')}</p>
             </div>
           </div>
         </div>

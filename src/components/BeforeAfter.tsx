@@ -2,17 +2,20 @@ import { Card } from "@/components/ui/card";
 import beforeImage from "@/assets/before-paint.jpg";
 import afterImage from "@/assets/after-paint.jpg";
 import { CheckCircle, XCircle } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const BeforeAfter = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16" id="info">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Ennen ja jälkeen
+            {t('beforeAfter.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Katso kuinka ammattitaitoinen huoltomaalaus muuttaa talosi ilmeen ja suojaa sitä vuosiksi
+            {t('beforeAfter.subtitle')}
           </p>
         </div>
 
@@ -27,7 +30,7 @@ const BeforeAfter = () => {
                   className="w-full h-80 object-cover"
                 />
                 <div className="absolute top-4 left-4 bg-destructive text-destructive-foreground px-4 py-2 rounded-full font-semibold">
-                  Ennen
+                  {t('beforeAfter.before')}
                 </div>
               </div>
             </Card>
@@ -72,7 +75,7 @@ const BeforeAfter = () => {
                   className="w-full h-80 object-cover"
                 />
                 <div className="absolute top-4 left-4 bg-paint-blue text-white px-4 py-2 rounded-full font-semibold">
-                  Jälkeen
+                  {t('beforeAfter.after')}
                 </div>
               </div>
             </Card>

@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageSwitcher from "./LanguageSwitcher";
 import logoFull from "@/assets/logo-full.png";
-
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,26 +41,27 @@ const Header = () => {
         
         <nav className="hidden md:flex items-center space-x-8">
           <a href="#etusivu" className="text-foreground hover:text-primary transition-colors font-medium px-3 py-2 rounded-md hover:bg-primary/10">
-            Etusivu
+            {t('nav.home')}
           </a>
           <a href="#palvelut" className="text-foreground hover:text-primary transition-colors font-medium px-3 py-2 rounded-md hover:bg-primary/10">
-            Palvelut
+            {t('nav.services')}
           </a>
           <a href="#info" className="text-foreground hover:text-primary transition-colors font-medium px-3 py-2 rounded-md hover:bg-primary/10">
-            Info
+            {t('nav.info')}
           </a>
           <a href="#yhteystiedot" className="text-foreground hover:text-primary transition-colors font-medium px-3 py-2 rounded-md hover:bg-primary/10">
-            Yhteystiedot
+            {t('nav.contact')}
           </a>
         </nav>
 
         <div className="flex items-center space-x-3">
+          <LanguageSwitcher />
           <Button variant="outline" size="sm" className="hidden sm:flex items-center space-x-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium" onClick={handleCallClick}>
             <Phone className="w-4 h-4" />
-            <span>Soita nyt</span>
+            <span>{t('header.callNow')}</span>
           </Button>
           <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-6" onClick={handleQuoteClick}>
-            Pyydä tarjous
+            {t('header.getQuote')}
           </Button>
         </div>
       </div>
