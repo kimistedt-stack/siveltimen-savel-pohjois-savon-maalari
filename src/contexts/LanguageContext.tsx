@@ -21,7 +21,7 @@ const translations = {
     'header.getQuote': 'Pyydä tarjous',
     
     // Hero
-    'hero.title': 'Ammattitaitoista maalaustyötä Helsingissä',
+    'hero.title': 'Ammattitaitoista maalaustyötä Pohjois-Savossa',
     'hero.subtitle': 'Teemme kotisi kauniimmaksi ja suojaamme sen sään vaikutuksilta. Yli 15 vuoden kokemus takaa laadukkaan lopputuloksen.',
     'hero.cta': 'Pyydä maksuton tarjous',
     
@@ -31,7 +31,7 @@ const translations = {
     'services.consultation': 'Konsultointi ja suunnittelu',
     'services.consultationDesc': 'Kartoitamme tarpeet ja suunnittelemme työn yksityiskohtaisesti',
     'services.preparation': 'Huolellinen valmistelu',
-    'services.preparationDesc': 'Suojaamme kiinteistön ja valmistelEmme pinnat ammattitaitoisesti',
+    'services.preparationDesc': 'Suojaamme kiinteistön ja valmistellemme pinnat ammattitaitoisesti',
     'services.painting': 'Laadukas maalaustyö',
     'services.paintingDesc': 'Käytämme laadukkaita materiaaleja ja ammattitaitoisia tekniikoita',
     'services.finishing': 'Viimeistely ja siivous',
@@ -73,12 +73,12 @@ const translations = {
     'contact.hours': 'Aukioloajat',
     'contact.hoursValue': 'Ma-Pe 8:00-17:00',
     'contact.area': 'Palvelualue',
-    'contact.areaValue': 'Helsinki ja lähikunnat',
+    'contact.areaValue': 'Pohjois-Savo ja lähikunnat',
     
     // Footer
     'footer.company': 'Siveltimen Sävel',
     'footer.slogan': 'Väriä elämään',
-    'footer.description': 'Ammattitaitoista maalauspalvelua Helsingissä jo yli 15 vuotta. Kotisi ansaitsee parhaan.',
+    'footer.description': 'Ammattitaitoista maalauspalvelua Pohjois-Savossa jo yli 15 vuotta. Kotisi ansaitsee parhaan.',
     'footer.services': 'Palvelut',
     'footer.interior': 'Sisämaalaus',
     'footer.exterior': 'Ulkomaalaus',
@@ -98,7 +98,7 @@ const translations = {
     'header.getQuote': 'Get quote',
     
     // Hero
-    'hero.title': 'Professional Painting Services in Helsinki',
+    'hero.title': 'Professional Painting Services in North Savo',
     'hero.subtitle': 'We make your home more beautiful and protect it from weather conditions. Over 15 years of experience guarantees quality results.',
     'hero.cta': 'Get free quote',
     
@@ -150,12 +150,12 @@ const translations = {
     'contact.hours': 'Opening hours',
     'contact.hoursValue': 'Mon-Fri 8:00-17:00',
     'contact.area': 'Service area',
-    'contact.areaValue': 'Helsinki and surrounding areas',
+    'contact.areaValue': 'North Savo and surrounding areas',
     
     // Footer
     'footer.company': 'Siveltimen Sävel',
     'footer.slogan': 'Color to life',
-    'footer.description': 'Professional painting services in Helsinki for over 15 years. Your home deserves the best.',
+    'footer.description': 'Professional painting services in North Savo for over 15 years. Your home deserves the best.',
     'footer.services': 'Services',
     'footer.interior': 'Interior painting',
     'footer.exterior': 'Exterior painting',
@@ -175,7 +175,7 @@ const translations = {
     'header.getQuote': 'Begär offert',
     
     // Hero
-    'hero.title': 'Professionella målerietjänster i Helsingfors',
+    'hero.title': 'Professionella målerietjänster i Norra Savolax',
     'hero.subtitle': 'Vi gör ditt hem vackrare och skyddar det från väderförhållanden. Över 15 års erfarenhet garanterar kvalitetsresultat.',
     'hero.cta': 'Få gratis offert',
     
@@ -227,12 +227,12 @@ const translations = {
     'contact.hours': 'Öppettider',
     'contact.hoursValue': 'Mån-Fre 8:00-17:00',
     'contact.area': 'Serviceområde',
-    'contact.areaValue': 'Helsingfors och omkringliggande områden',
+    'contact.areaValue': 'Norra Savolax och omkringliggande områden',
     
     // Footer
     'footer.company': 'Siveltimen Sävel',
     'footer.slogan': 'Färg till livet',
-    'footer.description': 'Professionella målerietjänster i Helsingfors i över 15 år. Ditt hem förtjänar det bästa.',
+    'footer.description': 'Professionella målerietjänster i Norra Savolax i över 15 år. Ditt hem förtjänar det bästa.',
     'footer.services': 'Tjänster',
     'footer.interior': 'Inomhusmålning',
     'footer.exterior': 'Utomhusmålning',
