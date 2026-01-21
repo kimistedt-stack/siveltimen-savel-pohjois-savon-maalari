@@ -59,7 +59,7 @@ const Footer = () => {
         <hr className="border-blue-300/30 my-8" />
         
         <div className="text-center text-blue-200">
-          <p>&copy; 2024 Siveltimen Sävel. Kaikki oikeudet pidätetään.</p>
+          <p>© 2026 Siveltimen Sävel. Kaikki oikeudet pidätetään.</p>
           <p className="text-sm mt-2 italic">
             "Jotta talosi pysyisi terveenä - ota yhteyttä tänään"
           </p>
